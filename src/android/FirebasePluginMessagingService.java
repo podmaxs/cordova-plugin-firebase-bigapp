@@ -75,9 +75,13 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
 
     private void sendNotification(String id, String title, String messageBody, Map<String, String> data, boolean showNotification) {
         Bundle bundle = new Bundle();
-        for (String key : data.keySet()) {
-            bundle.putString(key, data.get(key));
-        }
+        //for (String key : data.keySet()) {
+          //  Log.d(TAG, "Create: object responce "+ key);
+            //bundle.putString(key, data.get(key));
+        //}
+        bundle.putString('id',    id);
+        bundle.putString('text',  messageBody);
+        bundle.putString('title', title);
         if (showNotification) {
             Intent intent = new Intent(this, OnNotificationOpenReceiver.class);
             intent.putExtras(bundle);
@@ -105,7 +109,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
 
             notificationManager.notify(id.hashCode(), notificationBuilder.build());
         } else {
-            Log.d(TAG, "From: test");
+            Log.d(TAG, "From: test 2");
             bundle.putBoolean("tap", false);
             FirebasePlugin.sendNotification(bundle);
         }
