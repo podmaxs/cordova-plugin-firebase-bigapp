@@ -33,7 +33,7 @@ function directoryExists(path) {
 var config = fs.readFileSync("config.xml").toString()
 var name = getValue(config, "name")
 
-if (directoryExists("platforms/ios")) {
+/*if (directoryExists("platforms/ios")) {
   var paths = ["GoogleService-Info.plist", "platforms/ios/www/GoogleService-Info.plist"];
 
   for (var i = 0; i < paths.length; i++) {
@@ -48,7 +48,7 @@ if (directoryExists("platforms/ios")) {
       break;
     }
   }
-}
+}*/
 
 if (directoryExists("platforms/android")) {
   var paths = ["google-services.json", "platforms/android/assets/www/google-services.json"];

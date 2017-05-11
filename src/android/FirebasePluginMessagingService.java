@@ -79,9 +79,11 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
           //  Log.d(TAG, "Create: object responce "+ key);
             //bundle.putString(key, data.get(key));
         //}
-        bundle.putString('id',    id);
-        bundle.putString('text',  messageBody);
-        bundle.putString('title', title);
+        bundle.putString("id",    id);
+        bundle.putString("text",  messageBody);
+        bundle.putString("title", title);
+        bundle.putString("sound", "default");
+        
         if (showNotification) {
             Intent intent = new Intent(this, OnNotificationOpenReceiver.class);
             intent.putExtras(bundle);
