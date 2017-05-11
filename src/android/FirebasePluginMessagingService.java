@@ -82,6 +82,7 @@ public class FirebasePluginMessagingService extends FirebaseMessagingService {
         bundle.putString("id",    id);
         bundle.putString("text",  messageBody);
         bundle.putString("title", title);
+        bundle.putString("sound", "default");
         
         if (showNotification) {
             Intent intent = new Intent(this, OnNotificationOpenReceiver.class);
